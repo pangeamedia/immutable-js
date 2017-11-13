@@ -384,7 +384,6 @@ declare class Seq<K,V> extends _Iterable<K,V, typeof KeyedSeq, typeof IndexedSeq
   static <K,V>(iter: { [key: K]: V }): KeyedSeq<K,V>;
 
   static isSeq(maybeSeq: any): boolean;
-  static of<T>(...values: T[]): IndexedSeq<T>;
 
   size: ?number;
   cacheResult(): this;
@@ -398,7 +397,6 @@ declare class KeyedSeq<K,V> extends Seq<K,V> mixins KeyedIterable<K,V> {
 
 declare class IndexedSeq<T> extends Seq<number,T> mixins IndexedIterable<T> {
   static <T>(iter?: ESIterable<T>): IndexedSeq<T>;
-  static of<T>(...values: T[]): IndexedSeq<T>;
 }
 
 declare class SetSeq<T> extends Seq<T,T> mixins SetIterable<T> {
